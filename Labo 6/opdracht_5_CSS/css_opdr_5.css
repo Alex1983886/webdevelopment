@@ -1,0 +1,13 @@
+.link-with-icon {
+    background-image: url('AfbeeldingOPDR5/JSB.webp'); /* Vervang 'jouwicoon.png' door de werkelijke bestandsnaam van je icoonafbeelding */
+    background-size: 20px 20px; /* Pas de grootte van je icoon aan */
+    background-repeat: no-repeat;
+    background-position: left center; /* Plaats het icoon aan de linkerzijde van de link */
+    padding-left: 30px; /* Zorg voor wat ruimte tussen de linktekst en het icoon */
+    text-decoration: none; /* Verwijder de standaard onderstreping van links */
+    color: #333; /* Kies de tekstkleur voor de link */
+}
+
+.link-with-icon:hover {
+    color: #ff6600; /* Verander de tekstkleur bij hover */
+}
