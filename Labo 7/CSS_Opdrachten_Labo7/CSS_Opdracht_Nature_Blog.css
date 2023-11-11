@@ -1,9 +1,53 @@
 body {
+    font-family: Arial;
     width: 95%;
-    margin: 0 auto;
+    margin:auto;
 }
 
-header {
-    content: url('AfbeeldingOPDR6/checkedicon.png');
-    /*background-image: url('Afbeeldingen/header.jpg')*/
+section > header {
+    padding: 0 10px;
+    font-weight: bold;
+    color:white;
+    height: 100px;
+    background-size:cover;
+    background-image: url("../Afbeeldingen/header.jpg");
+    font-size:25px;
 }
+
+section > nav {
+    background-color: rgb(128, 128, 128);
+    height:30px;
+    padding: 10px;
+}
+
+section > nav > a {
+    color:lightgreen;
+    text-decoration: none;
+}
+
+section > article {
+    background-color:lightgray;
+}
+
+section > article > header {
+    font-size:30px;
+    color:dimgray;
+    text-decoration: underline;
+}
+
+section > article > header > h1 {
+    padding: 20px 0 0 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
