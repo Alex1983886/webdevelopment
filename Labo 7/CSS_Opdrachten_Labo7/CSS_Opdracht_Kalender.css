@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 3px solid black;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: rgb(35, 37, 70);
+    color: rgb(200, 190, 240);
+}
+
+td {
+    background-color: white;
+}
+
+td.prev-month {
+    color: gray;
+    background-color: darkgray;
+}
+
+td:first-child, td:last-child {
+    background-color: cyan;
+}
+
+td.holiday {
+    background-color: rgb(250, 120, 120);
+}
+

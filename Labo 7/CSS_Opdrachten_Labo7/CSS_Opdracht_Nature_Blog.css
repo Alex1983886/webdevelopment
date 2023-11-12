@@ -1,7 +1,7 @@
 body {
     font-family: Arial;
     width: 95%;
-    margin:auto;
+    margin: 0 auto;
 }
 
 section > header {
@@ -27,6 +27,7 @@ section > nav > a {
 
 section > article {
     background-color:lightgray;
+    margin-bottom: 5px;
 }
 
 section > article > header {
@@ -42,7 +43,6 @@ section > article > header > h1 {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
 }
 
 th, td {
