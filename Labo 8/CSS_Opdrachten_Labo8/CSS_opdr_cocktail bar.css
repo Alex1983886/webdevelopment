@@ -1,0 +1,60 @@
+body {
+    font-family: Verdana, sans-serif;
+    font-size: 1.2em
+    width: 95%;
+}
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header img {
+    max-width: 100%;
+    height: auto;
+}
+
+#artikel-rechts {
+    float: right;
+    width: 25%;
+    border: 5px solid lightblue;
+    padding: 10px;
+    text-align: center;
+}
+#artikel-rechts h2 {
+    color: indianred;
+}
+#artikel-rechts a:hover {
+    background-color: brown;
+    color: white;
+}
+#artikel-links {
+    float:left;
+    width:70%
+}
+
+#artikel-links img {
+    float: left;
+    margin-right: 10px;
+    horiz-align: left;
+    vertical-align: top;
+}
+#artikel-links h1 {
+    color: #007e7e;
+    font-size: 150%;
+}
+#artikel-onderaan h2 {
+    color: #007e7e;
+    font-size: 130%;
+}
+#guarantee {
+    margin: 30px;
+    padding: 20px;
+    color: #444444;
+    background-color: #a7cece;
+    border: 1px dashed white;
+}
+footer {
+    text-align: center;
+}
+
