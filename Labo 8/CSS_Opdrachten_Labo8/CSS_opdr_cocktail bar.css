@@ -21,6 +21,10 @@ header img {
     padding: 10px;
     text-align: center;
 }
+#artikel-rechts h1 {
+    text-align: center;
+    background: url("../images/cocktail.gif") center top repeat-x;
+}
 #artikel-rechts h2 {
     color: indianred;
 }
