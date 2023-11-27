@@ -1,23 +1,17 @@
 body {
     font-family: Verdana, sans-serif;
-    font-size: 1.2;
+    font-size: 1.2em;
 }
 
 main article {
     margin: 10px;
     border: 1px solid black;
     padding: 10px;
-
 }
-article img {
-    margin-right: 10px;
-
+article:nth-child(even) img {
+    float: right;
 }
 
-article int-element(odd) > img {
-                             float: right;
-                         }
-
-article int-element(even) > img {
-
-                          }
+article:nth-child(odd) img {
+    float: left;
+}
