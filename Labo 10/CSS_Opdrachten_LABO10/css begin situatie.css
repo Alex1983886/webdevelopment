@@ -30,7 +30,41 @@ figcaption {
     font-size: .8em;
 }
 
+@media screen and (min-width: 992px)  { /* voor de desktop*/
+    body{
+        background-color: lightgreen;
+    }
 
-@media {
+    figure{
+        display: inline-block;
+        margin: 10px auto;
+        width: 30%;
+        height: auto;
+    }
+}
 
+@media screen and (max-width: 992px){ /* voor de tablet, 992 max want moet tussen 768 & 992 liggen !!! */
+    body{
+        background-color: purple;
+    }
+
+    figure{
+        display: inline-block;
+        margin: 10px auto;
+        width: 40%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 768px){ /* voor gsm */
+    body{
+        background-color: white;
+        margin: auto;
+    }
+
+    figure {
+        margin: 10px auto;
+        width: 90%;
+        height: auto;
+    }
 }
