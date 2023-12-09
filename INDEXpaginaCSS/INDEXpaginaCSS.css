@@ -1,0 +1,32 @@
+body {
+    background: linear-gradient(45deg, #2B2D42 20%, #3c3c3c 20% 50%, #6495ed 50% 80%, #f8f8ff 80%);
+    color: white;
+    padding: 20px;
+}
+h1 {
+    color: #F88379;
+    border: 2px dashed lightsalmon;
+    display: inline;
+    padding: 10px;
+}
+h2 {
+    color: #F88379;
+}
+
+a {
+    color: coral;
+    font-weight: bold;
+
+}
+
+a:hover {
+    color: cornflowerblue;
+}
+
+ol, li {
+    list-style-type: none;
+
+}
+
+
+/* #96ceb4 , #FAD5A5 */
