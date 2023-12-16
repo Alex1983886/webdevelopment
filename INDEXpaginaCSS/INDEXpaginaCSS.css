@@ -1,26 +1,25 @@
 body {
-    background: linear-gradient(45deg, #2B2D42 20%, #3c3c3c 20% 50%, #6495ed 50% 80%, #f8f8ff 80%);
-    color: white;
+    background: linear-gradient(45deg, cornflowerblue 20%, #3c3c3c 20% 50%, #ff6f69 50% 80%, #96ceb4 80%);
     padding: 20px;
 }
 h1 {
-    color: #F88379;
-    border: 2px dashed lightsalmon;
+    color: white;
+    border: 2px dashed yellow;
     display: inline;
     padding: 10px;
 }
 h2 {
-    color: #F88379;
+    color: papayawhip;
 }
 
 a {
-    color: coral;
+    color: white;
     font-weight: bold;
 
 }
 
 a:hover {
-    color: cornflowerblue;
+    color: yellow;
 }
 
 ol, li {
@@ -29,4 +28,7 @@ ol, li {
 }
 
 
-/* #96ceb4 , #FAD5A5 */
+/* #96ceb4 , #FAD5A5
+
+     background: linear-gradient(45deg, #2B2D42 20%, #3c3c3c 20% 50%, #6495ed 50% 80%, #f8f8ff 80%);
+*/
