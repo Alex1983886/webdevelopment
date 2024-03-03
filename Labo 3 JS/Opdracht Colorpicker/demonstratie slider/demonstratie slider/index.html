@@ -1,20 +1,28 @@
-<!DOCTYPE html> 
-<html> 
-<head> 
+<!DOCTYPE html>
+<html>
+<head>
 	<title>Demonstratie slider</title>
 	<script type="text/javascript" charset="utf-8" src="scripts/code.js"></script>
 	<link rel="stylesheet" href="styles/styles.css"/>
-</head> 
-<body> 
-<section>
-	<p>Open het console venster, versleep daarna de slider hieronder en kijk welke berichten er komen</p>
-	<input type="range" class="rodeSlider" value="0" min="0" max="100" />
-	<input type="range" class="groeneSlider" value="0" min="0" max="100" />
-	<input type="range" class="blauweSlider" value="0" min="0" max="100" />
+</head>
+<body>
+<section class="container">
+	<div class="sliders">
+		<div class="slider">
+			<input type="range" class="rodeSlider" value="0" min="0" max="255" />
+			<span class="slider-value rode-value">0</span>
+		</div>
+		<div class="slider">
+			<input type="range" class="groeneSlider" value="0" min="0" max="255" />
+			<span class="slider-value groene-value">0</span>
+		</div>
+		<div class="slider">
+			<input type="range" class="blauweSlider" value="0" min="0" max="255" />
+			<span class="slider-value blauwe-value">0</span>
+		</div>
+	</div>
+	<div class="colorBox"></div>
 </section>
-<section>
-<p>Een gekleurd blokje :</p>
-<div class="colorBox" />
-</section>
-</body> 
-</html> 
+</body>
+</html>
+

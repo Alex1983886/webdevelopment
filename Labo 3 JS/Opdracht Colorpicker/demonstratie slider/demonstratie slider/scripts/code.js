@@ -1,24 +1,29 @@
 const setup = () => {
-	let colorBox=document.getElementsByClassName("colorDemo");
-	let rodeSlider = document.getElementsByClassName("rodeSlider");
-	let groeneSlider = document.getElementsByClassName("groeneSlider");
-	let blauweSlider = document.getElementsByClassName("blauweSlider");
+	let colorBox = document.querySelector(".colorBox");
+	let sliders = document.querySelectorAll(".slider input[type='range']");
 
-	const rodeSlider = rodeSlider.value;
-	const groeneSlider = groeneSlider.value;
-	const blauweSlider = blauweSlider.value;
+	const update = () => {
+		let rodeValue = document.querySelector(".rodeSlider").value;
+		let groeneValue = document.querySelector(".groeneSlider").value;
+		let blauweValue = document.querySelector(".blauweSlider").value;
 
-	const colorString = ´rgb(${rodeSlider}, ${groeneSlider}, ${blauweSlider})´
-	rodeSlider[0].addEventListener("change", update);
-	rodeSlider[0].addEventListener("input", update);
+		let rodeValueSpan = document.querySelector(".rode-value");
+		let groeneValueSpan = document.querySelector(".groene-value");
+		let blauweValueSpan = document.querySelector(".blauwe-value");
 
-	groeneSlider[0].addEventListener("change", update);
-	groeneSlider[0].addEventListener("input", update);
+		rodeValueSpan.textContent = rodeValue;
+		groeneValueSpan.textContent = groeneValue;
+		blauweValueSpan.textContent = blauweValue;
 
-	blauweSlider[0].addEventListener("change", update);
-	blauweSlider[0].addEventListener("input", update);
+		const colorString = `rgb(${rodeValue}, ${groeneValue}, ${blauweValue})`;
+		colorBox.style.backgroundColor = colorString;
+	};
 
-	}
+	sliders.forEach(slider => {
+		slider.addEventListener("input", update);
+	});
 
+	update();
+};
 
 window.addEventListener("load", setup);

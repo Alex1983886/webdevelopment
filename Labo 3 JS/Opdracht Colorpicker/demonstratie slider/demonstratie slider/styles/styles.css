@@ -1,5 +1,30 @@
-.colorDemo {
-	width:100px;
-	height:100px;
-	border:1px solid black;
+.container {
+	display: flex;
+}
+
+.sliders {
+	display: flex;
+	flex-direction: column;
+	margin-right: 20px;
+}
+
+.slider {
+	display: flex;
+	align-items: center;
+}
+
+.slider input[type="range"] {
+	width: 200px;
+	margin-right: 10px;
+}
+
+.slider-value {
+	font-size: 14px;
+	width: 30px;
+}
+
+.colorBox {
+	width: 100px;
+	height: 100px;
+	border: 1px solid black;
 }
