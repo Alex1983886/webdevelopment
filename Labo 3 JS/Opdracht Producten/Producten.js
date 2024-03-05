@@ -1,29 +1,28 @@
 const setup = () => {
-    let btnBerekenen=document.getElementById("herberekenen");
+    const btnBerekenen = document.getElementById("herbereken");
     btnBerekenen.addEventListener("click", berekenen);
 }
+
 const berekenen = () => {
-    let prijs = document.getElementsByClassName('prijs');
-    let aantal = document.getElementsByClassName('aantal');
-    let btw = document.getElementsByClassName('btw');
-    let subtotaal = document.getElementsByClassName('subtotaal');
-    let totaal=document.getElementById("totaal");
-    let totaalberekening = 0;
-    let prijzen = [];
-    let btws = [];
-    for(let i = 0; i < prijs.length; i++){
-        prijzen[i] = parseInt(prijs[i].textContent, 10);
-        btws[i] = parseInt(btw[i].textContent, 10);
+    const subtotaalElementen = document.getElementsByClassName('subtotaal');
+    let totaal = 0;
 
-        let tussenresultaat1 = (prijzen[i]*aantal[i].value)/100;
-        let tussenresultaat2 = tussenresultaat1 * btws[i];
-        let resultaat1 = (prijzen[i]*aantal[i].value) + tussenresultaat2;
-        subtotaal[i].innerText = resultaat1 + " Eur";
-        totaalberekening += resultaat1;
+    for (let i = 0; i < subtotaalElementen.length; i++) {
+        const prijsString = document.getElementsByClassName('prijs')[i].textContent;
+        const prijs = parseFloat(prijsString.split(' ')[0]);
 
+        let aantal = parseInt(document.getElementsByClassName('aantal')[i].value, 10);
+        aantal = isNaN(aantal) ? 0 : aantal;
+
+        const btwString = document.getElementsByClassName('btw')[i].textContent;
+        const btw = parseFloat(btwString.split('%')[0]) / 100;
+
+        const subtotaal = prijs * aantal * (1 + btw);
+        subtotaalElementen[i].innerText = subtotaal.toFixed(2) + " Eur";
+        totaal += subtotaal;
     }
 
-    let totaalberekening2 = totaalberekening.toFixed(2);
-    totaal.innerText = totaalberekening2 + " Eur";
+    document.getElementById("totaal").innerText = totaal.toFixed(2) + " Eur";
 }
+
 window.addEventListener("load", setup);
