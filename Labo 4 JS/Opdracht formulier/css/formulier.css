@@ -1,0 +1,14 @@
+
+/* Voor de pijltjes weg te doen bij de zip-code*/
+
+/* Chrome, Safari, Edge, Opera */
+    .zip_code_Belgium::-webkit-outer-spin-button,
+    .zip_code_Belgium::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    .zip_code_Belgium[type=number] {
+        -moz-appearance: textfield;
+    }

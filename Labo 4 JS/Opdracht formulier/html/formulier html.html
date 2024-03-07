@@ -2,52 +2,63 @@
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="../css/formulier.css">
     <title>Opdracht formulier</title>
 </head>
 <body>
-<form action="" method="post"></form>
-<br>
-<label for="first_name">*First name:</label>
-<input type="text" id="first_name" required placeholder="First name"/><br>
-<label for="last_name">*Last name:</label>
-<input type="text" id="last_name" required placeholder="Lirst name"/><br>
-<p>Which sport do you train?</p>
-<label for="running">Running</label>
-<input type="checkbox" id="running" value="waarde die wordt overgedragen"/><br>
-<label for="swimming">Swimming</label>
-<input type="checkbox" id="swimming" value="waarde die wordt overgedragen"/><br>
-<label for="rowing">Rowing</label>
-<input type="checkbox" id="rowing" value="waarde die wordt overgedragen"/><br>
-<p>What is your gender ?</p>
-<input type="checkbox" id="male" value="waarde die wordt overgedragen"/>
-<label for="male">Male</label>
-<br><input type="checkbox" id="female" value="waarde die wordt overgedragen"/>
-<label for="female">Female</label>
-<br><input type="checkbox" id="mechanic" value="waarde die wordt overgedragen"/>
-<label for="mechanic">Mechanic</label><br>
-<br><label for="favorite_movie">Favorite movie:</label>
-<input type="text" id="favorite_movie" required placeholder=""/><br>
-<label for="favorite_quote">Favorite quote:</label>
-<input type="text" id="favorite_quote" required placeholder="Write your favorite quote"/><br>
-<label for="password">*Password:</label>
-<input type="text" id="password" required placeholder=""/><br>
-<label for="favorite_food">Favorite food:</label>
-<select id="favorite_food">
-    <option value="hamburger">Hamburger</option>
-    <option value="pizza">Pizza</option>
-    <option value="spaghettio">Spaghettio</option>
-    <option value="meat">Meat</option>
-    <option value="fish">Fish</option>
-</select>
-<input type="submit" /><br>
-<input type="file" id="bestand_kiezen" name="bestand_kiezen" required><br>
-<label for="email_adress">Email adress:</label>
-<input type="text" id="email_adress" required placeholder="Enter your email adress"/><br>
-<label for="favorite_site">Favoirite site:</label>
-<input type="text" id="favorite_site" required placeholder="Enter the URL of your favorite site"/><br>
-<label for="favorite_number">Favorite number between 1-10:</label>
-<input type="text" id="favorite_number" required placeholder=""/><br>
+<form action="" method="post">
+    <br>
+    <label for="first_name">*First name:</label>
+    <input type="text" id="first_name" required placeholder="First name"/><br>
+    <label for="last_name">*Last name:</label>
+    <input type="text" id="last_name" required placeholder="Lirst name"/><br>
+    <p>Which sport do you train?</p>
+    <label for="running">Running</label>
+    <input type="checkbox" id="running" value="waarde die wordt overgedragen"/><br>
+    <label for="swimming">Swimming</label>
+    <input type="checkbox" id="swimming" value="waarde die wordt overgedragen"/><br>
+    <label for="rowing">Rowing</label>
+    <input type="checkbox" id="rowing" value="waarde die wordt overgedragen"/><br>
+    <p>What is your gender ?</p>
+    <input type="checkbox" id="male" value="waarde die wordt overgedragen"/>
+    <label for="male">Male</label>
+    <br><input type="checkbox" id="female" value="waarde die wordt overgedragen"/>
+    <label for="female">Female</label>
+    <br><input type="checkbox" id="mechanic" value="waarde die wordt overgedragen"/>
+    <label for="mechanic">Mechanic</label><br>
+    <br><label for="favorite_movie">Favorite movie:</label>
+    <input type="text" id="favorite_movie" required placeholder=""/><br>
+    <label for="favorite_quote">Favorite quote:</label>
+    <input type="text" id="favorite_quote" required placeholder="Write your favorite quote"/><br>
+    <label for="password">*Password:</label>
+    <input type="text" id="password" required placeholder=""/><br>
+    <label for="favorite_food">Favorite food:</label>
+    <select id="favorite_food">
+        <option value="hamburger">Hamburger</option>
+        <option value="pizza">Pizza</option>
+        <option value="spaghettio">Spaghettio</option>
+        <option value="meat">Meat</option>
+        <option value="fish">Fish</option>
+    </select><br>
+    <input type="file" id="bestand_kiezen" name="bestand_kiezen" required><br>
+    <label for="email_adress">Email adress:</label>
+    <input type="text" id="email_adress" required placeholder="Enter your email adress"/><br>
+    <label for="favorite_site">Favoirite site:</label>
+    <input type="text" id="favorite_site" required placeholder="Enter the URL of your favorite site"/><br>
+    <label for="favorite_number">Favorite number between 1-10:</label>
+    <input type="number" min="1" max="10" id="favorite_number"/><br>
+    <label for="favorite_number_between">Favorite number between 11-1000:</label>
+    <input type="range" min="11" max="1000" id="favorite_number_between"><br>
+    <label for="date">When were you born?</label>
+    <input type="date" id="date"><br>
+    <label for="zip_code_Belgium">*Belgium zip-code red number</label>
+    <input type="number" min="1000" max="9999" id="zip_code_Belgium" placeholder="9999" class="zip_code_Belgium"><br>
+    <label for="search_something">Search for something:</label>
+    <input type="text" id="search_something" required placeholder=""/><br>
+    <label for="favorite_color">What is your favorite color?</label>
+    <input type="color" id="favorite_color" required placeholder=""/><br>
+    <input type="submit" value="Submit">
+</form>
 
 <script type="text/javascript" charset="utf-8" src="scripts/code.js"></script>
 </body>
