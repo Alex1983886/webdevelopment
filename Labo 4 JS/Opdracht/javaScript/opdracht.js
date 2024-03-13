@@ -1,4 +1,3 @@
-
 const setup = () => {
 
     let leeftijd = 34;
