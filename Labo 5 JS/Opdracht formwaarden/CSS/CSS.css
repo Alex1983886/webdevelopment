@@ -1,0 +1,9 @@
+.uitgelijnd {
+    display: inline-block;
+    width: 150px;
+    margin: 5px ;
+}
+
+.flex {
+    display: flex;
+}

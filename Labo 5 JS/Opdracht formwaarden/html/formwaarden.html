@@ -2,23 +2,25 @@
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <title>Opdracht formwaarden</title>
+ <link rel="stylesheet" href="../CSS/CSS.css">
+ <title>Opdracht formwaarden</title>
 </head>
 <body>
 <form id="formulier">
  <label>
-  <input type="checkbox" name="isRokerKader"> Is roker
+  <span class="uitgelijnd">Is roker</span>
+  <input type="checkbox" name="isRokerKader">
  </label>
  <br>
  <label>
-  Moedertaal:
+  <span class="uitgelijnd">Moedertaal:</span>
   <input type="radio" name="moedertaal" value="nl"> Nederlands
   <input type="radio" name="moedertaal" value="fr"> Frans
   <input type="radio" name="moedertaal" value="en"> Engels
  </label>
  <br>
  <label>
-  Favoriete buurland:
+  <span class="uitgelijnd">Favoriete buurland:</span>
   <select name="favorieteBuurland">
    <option value="Nederland">Nederland</option>
    <option value="Frankrijk">Frankrijk</option>
@@ -27,7 +29,8 @@
  </label>
  <br>
  <label>
-  Bestelling:
+  <div class="flex">
+  <span class="uitgelijnd">Bestelling:</span>
   <select name="bestelling" multiple>
    <option value="aardappelen">aardappelen</option>
    <option value="brood">brood</option>
@@ -36,6 +39,7 @@
    <option value="chips">chips</option>
    <option value="krant">krant</option>
   </select>
+  </div>
  </label>
  <br>
  <button type="button" onclick="toonResultaat()">Toon resultaat</button>
