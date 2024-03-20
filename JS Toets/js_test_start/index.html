@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+	<title>Kip en ei</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link href="CSS/style.css" rel="stylesheet">
+</head>
+<body>
+
+<label>Staat van de kip: </label>
+<select onchange="toonFoto(this.value)">
+	<option>Selecteer een optie</option>
+	<option value="kip_zonder_ei" name="kip_zonder_ei">Kip zonder ei</option>
+	<option value="kip_met_ei" name="kip_zonder_ei">Kip met ei</option>
+</select><br>
+	<div id="img" class="hidden"></div>
+	<p id="note"></p>
+<label>Geef een letter:</label>
+<input type="text" id="text_letter">
+	<script type="text/javascript" charset="utf-8" src="javaScript/javaScript.js"></script>
+</body>
+</html>
