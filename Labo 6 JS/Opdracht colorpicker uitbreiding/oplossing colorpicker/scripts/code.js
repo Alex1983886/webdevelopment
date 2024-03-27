@@ -38,8 +38,9 @@ const saveColor = () => {
 
 	let swatchContainer = document.createElement("div");
 	swatchContainer.classList.add("swatch-container");
+	swatch.append(deleteButton);
 	swatchContainer.appendChild(swatch);
-	swatchContainer.appendChild(deleteButton);
+
 
 	swatch.addEventListener("click", function() {
 		let color = swatch.style.backgroundColor;
