@@ -1,26 +1,18 @@
 const AANTAL_HORIZONTAAL = 4;
 const AANTAL_VERTICAAL = 3;
 const AANTAL_KAARTEN = 6;
-const KAART_ACHTERKANT = "";
 
-const playField = document.getElementById("playField");
+const afbeeldingenArray = ['img1.png', 'img2.png', 'img3.png', 'img4.png', 'img5.png', 'img6.png'];
 
-const maakKaarten = () => {
-    const kaartenNamen = maakKaartenNamen();
+let kaarten = [];
+let omgedraaideKaarten = [];
 
-    for (let i = 0; i < AANTAL_VERTICAAL; i++) {
-        for (let j = 0; j < AANTAL_HORIZONTAAL; j++) {
-            const card = document.createElement("div");
-            card.classList.add("card");
-            card.style.backgroundImage = `url(${KAART_ACHTERKANT})`;
-            card.setAttribute("data-naam", kaartenNamen[i * AANTAL_HORIZONTAAL + j]);
-            playField.appendChild(card);
-        }
-    }
-};
-
-const maakKaartenNamen = () => {
-
+function kaarten() {
+    const spelKaart = document.getElementById('spel');
+    for (let i = 0; i < AANTAL_KAARTEN; i++) {
+        for (let j = 0; j < 2; j++) {
+            const spelKaart = document.createElement('div');
+            spelKaart.classList.add('card');
 }
 
-window.addEventListener("load", maakKaarten);
+window.addEventListener("load", );
