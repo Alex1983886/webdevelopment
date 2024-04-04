@@ -1,0 +1,17 @@
+#playField {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-color: lightblue;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}

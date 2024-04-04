@@ -7,15 +7,20 @@ let global = {
     score: 0, // aantal hits
     timeoutId: 0 // id van de timeout timer, zodat we die kunnen annuleren
 };
+
 const setup = () => {
     let image = document.getElementById("foto");
     image.addEventListener("click", onImageClick);
+
+    let startButton = document.getElementById("startButton");
+    startButton.addEventListener("click", startGame);
+
     consoleBericht();
-};
+}
 
 const setImageInterval = () => {
     clearInterval(global.timeoutId);
-    global.timeoutId = setInterval( () => {
+    global.timeoutId = setInterval(() => {
         randomizeImage();
         randomizePosition();
     }, global.MOVE_DELAY);
@@ -27,26 +32,28 @@ const onImageClick = () => {
     setImageInterval();
 }
 
+const startGame = () => {
+    setImageInterval();
+}
+
 const randomizePosition = () => {
-    let randomHorizontaal = Math.floor(Math.random() * 600 - global.IMAGE_SIZE);
-    let randomVerticaal = Math.floor(Math.random() * 800 - global.IMAGE_SIZE);
+    let randomHorizontal = Math.floor(Math.random() * (600 - global.IMAGE_SIZE));
+    let randomVertical = Math.floor(Math.random() * (800 - global.IMAGE_SIZE));
     let image = document.getElementById("foto");
-    image.style.marginLeft = randomHorizontaal + "px";
-    image.style.marginTop = randomVerticaal + "px";
+    image.style.marginLeft = randomHorizontal + "px";
+    image.style.marginTop = randomVertical + "px";
 }
 
 const randomizeImage = () => {
-    const randomGetal = Math.floor(Math.random() * global.IMAGE_COUNT);
+    const randomNum = Math.floor(Math.random() * global.IMAGE_COUNT);
     let image = document.getElementById("foto");
-    image.setAttribute("src", global.IMAGE_PATH_PREFIX + randomGetal + global.IMAGE_PATH_SUFFIX);
+    image.setAttribute("src", global.IMAGE_PATH_PREFIX + randomNum + global.IMAGE_PATH_SUFFIX);
 }
+
 const consoleBericht = () => {
     let intervalConsole = setInterval(() => {
-        console.log("Berichtje")
-    },1000)
+        console.log("Berichtje");
+    }, 1000);
 }
 
-
 window.addEventListener("load", setup);
-
-
