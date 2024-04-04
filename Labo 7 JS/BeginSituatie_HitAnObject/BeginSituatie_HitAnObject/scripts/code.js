@@ -26,14 +26,28 @@ const setImageInterval = () => {
     }, global.MOVE_DELAY);
 }
 
-const onImageClick = () => {
+const onImageClick = (event) => {
+    if(event.target.currentSrc.slice(-5) === '0.png') {
+        window.alert("Je hebt op een bom geklikt!");
+        location.reload();
+    }
+    pasScoreAan();
     randomizeImage();
     randomizePosition();
     setImageInterval();
+
 }
 
+const pasScoreAan = () => {
+    global.score++;
+    let aantalHits = document.getElementById('aantalHits');
+    aantalHits.innerHTML = global.score;
+}
 const startGame = () => {
     setImageInterval();
+    const startKnop = document.getElementById('startButton');
+    startKnop.style.display = 'none';
+
 }
 
 const randomizePosition = () => {
