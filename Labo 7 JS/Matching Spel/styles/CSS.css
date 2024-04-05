@@ -1,4 +1,64 @@
-#playField {
+{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px 60px;
+    background: rosybrown;
+}
+
+h2 {
+    font-size: 3em;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+.reset {
+    padding: 15px 20px;
+    color: #2B2D42;
+    background: white;
+    border: none;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 600;
+}
+.game {
+    width: 440px;
+    height: 440px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* #playField {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -15,3 +75,4 @@
     border-radius: 5px;
     cursor: pointer;
 }
+*/
