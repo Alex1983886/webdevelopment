@@ -35,17 +35,17 @@ const bewaarBewerktePersoon = () => {
         const geboorteDatum = new Date(document.getElementById("geboorteDatum").value);
         const email = document.getElementById("email").value;
         const aantalKinderen = parseInt(document.getElementById("aantalKinderen").value);
-    }
 
-    const bestaandePersoonIndex = personen.findIndex(persoon => persoon.voornaam === voornaam && persoon.familienaam === familienaam);
-    if (bestaandePersoonIndex !== -1) {
-        personen[bestaandePersoonIndex].geboorteDatum = geboorteDatum;
-        personen[bestaandePersoonIndex].email = email;
-        personen[bestaandePersoonIndex].aantalKinderen = aantalKinderen;
-    } else {
-        personen.push({ voornaam, familienaam, geboorteDatum, email, aantalKinderen });
+        const bestaandePersoonIndex = personen.findIndex(persoon => persoon.voornaam === voornaam && persoon.familienaam === familienaam);
+        if (bestaandePersoonIndex !== -1) {
+            personen[bestaandePersoonIndex].geboorteDatum = geboorteDatum;
+            personen[bestaandePersoonIndex].email = email;
+            personen[bestaandePersoonIndex].aantalKinderen = aantalKinderen;
+        } else {
+            personen.push({ voornaam, familienaam, geboorteDatum, email, aantalKinderen });
+        }
+        updatePersonenLijst();
     }
-
 };
 
 // Event listener (btnNieuw click)
