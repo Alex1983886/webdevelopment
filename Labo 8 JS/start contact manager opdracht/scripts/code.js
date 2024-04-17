@@ -1,4 +1,26 @@
-let personen = [];
+let personen=[
+    {
+        voornaam: 'Jan',
+        familienaam: 'Janssens',
+        geboorteDatum: new Date('2010-10-10'),
+        email: 'jan@example.com',
+        aantalKinderen: 0
+    },
+    {
+        voornaam: 'Mieke',
+        familienaam: 'Mickelsen',
+        geboorteDatum: new Date('1980-01-01'),
+        email: 'mieke@example.com',
+        aantalKinderen: 1
+    },
+    {
+        voornaam: 'Piet',
+        familienaam: 'Pieters',
+        geboorteDatum: new Date('1970-12-31'),
+        email: 'piet@example.com',
+        aantalKinderen: 2
+    }
+];
 
 // Event listener (btnBewaar click)
 // Bewaar de wijzigingen die in de user interface werden aangebracht
@@ -6,13 +28,24 @@ const bewaarBewerktePersoon = () => {
     console.log("Klik op de knop bewaar");
 
     // valideer alle input data en controleer of er geen errors meer zijn
-    valideer();
+    const isValid = valideer();
+    if (isValid) {
+        const voornaam = document.getElementById("voornaam").value;
+        const familienaam = document.getElementById("familienaam").value;
+        const geboorteDatum = new Date(document.getElementById("geboorteDatum").value);
+        const email = document.getElementById("email").value;
+        const aantalKinderen = parseInt(document.getElementById("aantalKinderen").value);
+    }
 
-    // indien ok, bewaar de ingegeven data.
-        // een nieuw aangemaakte persoon voegen we toe
-        // een bestaande persoon in de lijst passen we aan
+    const bestaandePersoonIndex = personen.findIndex(persoon => persoon.voornaam === voornaam && persoon.familienaam === familienaam);
+    if (bestaandePersoonIndex !== -1) {
+        personen[bestaandePersoonIndex].geboorteDatum = geboorteDatum;
+        personen[bestaandePersoonIndex].email = email;
+        personen[bestaandePersoonIndex].aantalKinderen = aantalKinderen;
+    } else {
+        personen.push({ voornaam, familienaam, geboorteDatum, email, aantalKinderen });
+    }
 
-    // zorg ervoor dat de naam en voornaam ook aangepast en/of zichtbaar zijn in de lijst na updaten
 };
 
 // Event listener (btnNieuw click)
@@ -25,6 +58,7 @@ const bewerkNieuwePersoon = () => {
 
 // onze setup functie die de event listeners registreert
 const setup = () => {
+
     let btnBewaar = document.getElementById("btnBewaar");
     btnBewaar.addEventListener("click", bewaarBewerktePersoon);
 
@@ -37,3 +71,10 @@ const setup = () => {
 };
 
 window.addEventListener("load", setup);
+
+
+
+
+
+
+
