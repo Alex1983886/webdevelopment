@@ -1,80 +1,115 @@
-let personen=[
-    {
-        voornaam: 'Jan',
-        familienaam: 'Janssens',
-        geboorteDatum: new Date('2010-10-10'),
-        email: 'jan@example.com',
-        aantalKinderen: 0
-    },
-    {
-        voornaam: 'Mieke',
-        familienaam: 'Mickelsen',
-        geboorteDatum: new Date('1980-01-01'),
-        email: 'mieke@example.com',
-        aantalKinderen: 1
-    },
-    {
-        voornaam: 'Piet',
-        familienaam: 'Pieters',
-        geboorteDatum: new Date('1970-12-31'),
-        email: 'piet@example.com',
-        aantalKinderen: 2
-    }
-];
+let personen = [];
 
-// Event listener (btnBewaar click)
-// Bewaar de wijzigingen die in de user interface werden aangebracht
 const bewaarBewerktePersoon = () => {
     console.log("Klik op de knop bewaar");
+    valideer();
 
-    // valideer alle input data en controleer of er geen errors meer zijn
-    const isValid = valideer();
-    if (isValid) {
-        const voornaam = document.getElementById("voornaam").value;
-        const familienaam = document.getElementById("familienaam").value;
-        const geboorteDatum = new Date(document.getElementById("geboorteDatum").value);
-        const email = document.getElementById("email").value;
-        const aantalKinderen = parseInt(document.getElementById("aantalKinderen").value);
+    let nieuwePersoon;
 
-        const bestaandePersoonIndex = personen.findIndex(persoon => persoon.voornaam === voornaam && persoon.familienaam === familienaam);
-        if (bestaandePersoonIndex !== -1) {
-            personen[bestaandePersoonIndex].geboorteDatum = geboorteDatum;
-            personen[bestaandePersoonIndex].email = email;
-            personen[bestaandePersoonIndex].aantalKinderen = aantalKinderen;
+    if (document.getElementsByClassName("invalid").length === 0) {
+        const voornaam = document.getElementById("txtVoornaam").value;
+        const familienaam = document.getElementById("txtFamilienaam").value;
+        const geboorteDatum = document.getElementById("txtGeboorteDatum").value;
+        const email = document.getElementById("txtEmail").value;
+        const aantalKinderen = document.getElementById("txtAantalKinderen").value;
+
+        nieuwePersoon = {
+            voornaam: voornaam,
+            familienaam: familienaam,
+            geboorteDatum: geboorteDatum,
+            email: email,
+            aantalKinderen: aantalKinderen
+        };
+
+        let selectedIndex = document.getElementById("lstPersonen").selectedIndex;
+
+        if (selectedIndex === -1) {
+            personen.push(nieuwePersoon);
         } else {
-            personen.push({ voornaam, familienaam, geboorteDatum, email, aantalKinderen });
+            personen[selectedIndex] = nieuwePersoon;
         }
         updatePersonenLijst();
+        resetFormulier();
     }
 };
 
-// Event listener (btnNieuw click)
 const bewerkNieuwePersoon = () => {
     console.log("Klik op de knop nieuw");
-
-    // Zet de user interface klaar om de gegevens van een nieuwe persoon in te voeren
+    document.getElementById("lstPersonen").selectedIndex = -1;
+    resetFormulier();
 };
 
+const updatePersonenLijst = () => {
+    const lstPersonen = document.getElementById("lstPersonen");
 
-// onze setup functie die de event listeners registreert
+    lstPersonen.innerHTML = "";
+
+    personen.forEach((persoon, index) => {
+        const option = document.createElement("option");
+        option.text = `${persoon.voornaam} ${persoon.familienaam}`;
+        option.value = index;
+        lstPersonen.add(option);
+    });
+};
+
+const resetFormulier = () => {
+    document.getElementById("txtVoornaam").value = "";
+    document.getElementById("txtFamilienaam").value = "";
+    document.getElementById("txtGeboorteDatum").value = "";
+    document.getElementById("txtEmail").value = "";
+    document.getElementById("txtAantalKinderen").value = "";
+};
+
+const toonGeselecteerdePersoon = () => {
+    const selectedIndex = document.getElementById("lstPersonen").selectedIndex;
+    if (selectedIndex !== -1) {
+        const geselecteerdePersoon = personen[selectedIndex];
+        document.getElementById("txtVoornaam").value = geselecteerdePersoon.voornaam;
+        document.getElementById("txtFamilienaam").value = geselecteerdePersoon.familienaam;
+        document.getElementById("txtGeboorteDatum").value = geselecteerdePersoon.geboorteDatum;
+        document.getElementById("txtEmail").value = geselecteerdePersoon.email;
+        document.getElementById("txtAantalKinderen").value = geselecteerdePersoon.aantalKinderen;
+    }
+};
+
+const voegStandaardPersonenToe = () => {
+    personen.push(
+        {
+            voornaam: 'Jan',
+            familienaam: 'Janssens',
+            geboorteDatum: '2010-10-10',
+            email: 'jan@example.com',
+            aantalKinderen: 0
+        },
+        {
+            voornaam: 'Mieke',
+            familienaam: 'Mickelsen',
+            geboorteDatum: '1980-01-01',
+            email: 'mieke@example.com',
+            aantalKinderen: 1
+        },
+        {
+            voornaam: 'Piet',
+            familienaam: 'Pieters',
+            geboorteDatum: '1970-12-31',
+            email: 'piet@example.com',
+            aantalKinderen: 2
+        }
+    );
+    updatePersonenLijst();
+};
+
 const setup = () => {
-
-    let btnBewaar = document.getElementById("btnBewaar");
+    const btnBewaar = document.getElementById("btnBewaar");
     btnBewaar.addEventListener("click", bewaarBewerktePersoon);
 
-    let btnNieuw = document.getElementById("btnNieuw");
+    const btnNieuw = document.getElementById("btnNieuw");
     btnNieuw.addEventListener("click", bewerkNieuwePersoon);
 
-    let lstPersonen = document.getElementById("lstPersonen");
-    // voeg een change listener toe aan lstPersonen. Bij het klikken op een option element in de lijst
-    // moet de data van die persoon getoond worden in het formulier
+    const lstPersonen = document.getElementById("lstPersonen");
+    lstPersonen.addEventListener("change", toonGeselecteerdePersoon);
+
+    voegStandaardPersonenToe();
 };
 
 window.addEventListener("load", setup);
-
-
-
-
-
-
-
