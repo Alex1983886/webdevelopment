@@ -8,6 +8,8 @@ const initialize = () => {
 
 	let saveButton = document.getElementById("saveButton");
 	saveButton.addEventListener("click", saveColor);
+	restoreSliderValues();
+	restoreSwatches();
 	update();
 };
 
@@ -21,6 +23,7 @@ const update = () => {
 	document.getElementById("lblBlue").innerHTML = blue;
 	let swatch = document.getElementById("swatch");
 	swatch.style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
+	storeSliderValues();
 };
 
 const saveColor = () => {
@@ -34,6 +37,7 @@ const saveColor = () => {
 	deleteButton.classList.add("delete-button");
 	deleteButton.addEventListener("click", function() {
 		swatch.remove();
+		storeSwatches();
 	});
 
 	let swatchContainer = document.createElement("div");
@@ -52,8 +56,8 @@ const saveColor = () => {
 		document.getElementById("sldBlue").value = rgb[2];
 		update();
 	});
-
 	document.body.appendChild(swatchContainer);
+	storeSwatches();
 };
 
 window.addEventListener("load", initialize);
