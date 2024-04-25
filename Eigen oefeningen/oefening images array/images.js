@@ -1,11 +1,11 @@
 const setup = () => {
     const images = [
         "image1.jpg",
-        "image2.jpg",
+        "image2.png",
         "image3.jpg",
         "image4.jpg",
-        "image5.jpg",
-        "image6.jpg"
+        "image5.png",
+        "image6.png"
     ];
     const afbeeldingContainer = document.getElementById("afbeeldingContainer");
     images.forEach(image => {
