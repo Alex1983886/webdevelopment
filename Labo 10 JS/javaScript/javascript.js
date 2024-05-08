@@ -17,7 +17,7 @@ const clickSearch = () => {
     else {
         let prefix = command.charAt(1);
         let searchQuery = command.slice(3);
-        let formattedSearchQuery = searchQuery.replace(/ /g, "+"); // Vervang spaties door plusjes voor URL
+        let formattedSearchQuery = searchQuery.replace(/ /g, "+");
         let url;
         switch (prefix) {
             case 'g':
